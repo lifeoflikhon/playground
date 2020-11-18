@@ -61,6 +61,6 @@ export class AppComponent {
   }
 
   onMinimumOneSelected(): boolean {
-    return this.includeSymbols || this.includeNumbers || this.includeLetters;
+    return (this.includeSymbols || this.includeNumbers || this.includeLetters) && (+this.length > 0);
   }
 }
