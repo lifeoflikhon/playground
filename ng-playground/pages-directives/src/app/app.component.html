@@ -1,0 +1,20 @@
+<nav>
+  <ul class="pagination">
+    <li class="page-item" *ngIf="currentPage !== 0" (click)="currentPage = currentPage - 1">
+      <a href="#" class="page-link">Previous</a>
+    </li>
+    <ng-container *ngFor="let image of images; index as i">
+      <li class="page-item" *ngIf="checkWindowIndex(i)" [ngClass]="{'active': i === currentPage}" (click)="currentPage = i">
+        <a href="#" class="page-link">{{i + 1}}</a>
+      </li>
+    </ng-container>
+    <li class="page-item" *ngIf="currentPage !== images.length - 1" (click)="currentPage = currentPage + 1">
+      <a href="#" class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h4 appClass [bgColor]="'red'">{{images[currentPage].title}}</h4>
+  <img [src]="images[currentPage].url" [alt]="images[currentPage].title">
+</div>

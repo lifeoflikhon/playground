@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Pipes</h3>
+  <div class="row">
+    <div class="form-group col">
+      <label for="payee">Payee Name</label>
+      <input class="form-control" type="text" id="payee" (input)="onNameChange($event)">
+    </div>
+
+    <div class="col">
+      <p class="font-weight-bold">Name</p>
+      <p>{{name | titlecase}}</p>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="form-group col">
+      <label for="payDate">Pay Date</label>
+      <input class="form-control" type="date" id="payDate" (input)="onDateChange($event)">
+    </div>
+
+    <div class="col">
+      <p class="font-weight-bold">Pay Date</p>
+      <p>{{date | date: 'MMMM d, y'}}</p>
+    </div>
+  </div>
+
+</div>
