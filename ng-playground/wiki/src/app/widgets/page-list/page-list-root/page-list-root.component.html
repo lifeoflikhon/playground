@@ -1,0 +1,16 @@
+<table *ngIf="searchResultPages?.length > 0" class="table is-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Words count</th>
+    <th>Snippet</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let searchResult of searchResultPages">
+    <td><a [href]="'https://en.wikipedia.org/?curid=' + searchResult.pageid" target="_blank">{{searchResult['title']}}</a></td>
+    <td>{{searchResult['wordcount']}}</td>
+    <td><p [innerHTML]="searchResult['snippet']"></p></td>
+  </tr>
+  </tbody>
+</table>

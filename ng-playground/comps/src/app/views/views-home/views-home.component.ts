@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./views-home.component.scss']
 })
 export class ViewsHomeComponent implements OnInit {
+  stats = [
+    {value: 22, label: 'Users'},
+    {value: 900, label: 'Revineue'},
+    {value: 50, label: 'Reviews'},
+  ];
 
   constructor() { }
 
